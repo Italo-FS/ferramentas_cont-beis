@@ -1,0 +1,13 @@
+﻿<header id="main_header">
+	<div class="d-flex align-items-stretch bg-dark text-white">
+		<!-- <span class="title-btn title-btn-home" onclick="GoToHomePage()"><i class="bi bi-list"></i></span> -->
+		<span class="title-btn title-btn-return" onclick="history.back()" data-toggle="tooltip" title="Voltar"><i class="bi bi-arrow-left"></i></span>
+		<span class="title-btn title-btn-return" onclick="history.forward()" data-toggle="tooltip" title="Avançar" id="foward"><i class="bi bi-arrow-right"></i></span>
+		<span class="flex-grow-1 px-2 py-1" onmousedown="neutron.DragTitleBar()">Assistente 3</span>
+		<span class="title-btn title-btn-return" onclick="downloadSourceCode()" data-toggle="tooltip" title="Debug: Copiar código-fonte"><i class="bi bi-filetype-html"></i></span>
+		<span class="title-btn" onclick="neutron.Minimize()">0</span>
+		<span class="title-btn title-btn-maximize" onclick="neutron.Maximize()">1</span>
+		<span class="title-btn title-btn-restore" onclick="neutron.Maximize()">2</span>
+		<span class="title-btn title-btn-close" onclick="neutron.Close()">r</span>
+	</div>
+</header>

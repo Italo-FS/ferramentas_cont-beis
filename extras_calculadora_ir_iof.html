@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!--
+			The IE Compatibility flag, while not always necessary, makes sure your page
+			will always load in IE11+ rendering mode instead of being limited to IE7
+			features and behaviors. While IE11 is still relatively old as a rendering
+			engine, it supports the most fundamental parts needed for modern webpages to
+			function correctly.
+
+			Neutron will do its best to enable IE11+ rendering mode regardless of this
+			tag, but in current releases pages will not render correctly when compiled
+			unless this tag is present. Because of that and other edge cases, any page
+			you write to load in Neutron should contain this meta tag.
+		-->
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+	<script src="libs/jquery/jquery.min.js"></script>
+
+	<script src="libs/bootstrap/popper.min.js"></script>
+
+	<link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="libs/bootstrap/bootstrap.min.js"></script>
+	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<link href="libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="styles/styles.css" rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	<script src="js/routes.js"></script>
+
+	<!-- ------------------------------------------------------------------ -->
+</head>
+
+<body class="d-flex flex-column" onload="body_loaded();">
+	<!-- Title Bar -->
+	<header id="main_header"></header>
+	<!-- End Title Bar -->
+
+	<div class="flex-grow-1 d-flex">
+		<!-- Sidebar -->
+		<div id="sidebar"></div>
+		<!-- End Sidebar -->
+
+		<div id="main_body" class="main flex-grow-1">
+			<p id="breadcrumb"></p>
+
+			<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+			<div class="row align-items-end">
+				<div class="col-md-12 text-center">
+					<h3>Calculadora de IOF/IR</h3>
+
+					<div class="row">
+						<div class="col text-left">
+							<div class="form-group">
+								<label for="inputAmount">Rendimento Bruto:</label>
+								<input type="number" class="form-control" id="inputAmount" name="inputAmount" required>
+							</div>
+						</div>
+						<div class="col text-left vr-left">
+							<div class="form-group">
+								<label for="inputDays">Dias Investido:</label>
+								<input type="number" class="form-control" id="inputDays" name="inputDays" required>
+							</div>
+						</div>
+						<div style="padding-top: 20px;">OU</div>
+						<div class="col text-left">
+							<div class="form-group">
+								<label for="inputStartDate">Data Inicial:</label>
+								<input type="date" class="form-control" id="inputStartDate" name="inputStartDate">
+							</div>
+						</div>
+						<div class="col text-left">
+							<div class="form-group">
+								<label for="inputEndDate">Data Final:</label>
+								<input type="date" class="form-control" id="inputEndDate" name="inputEndDate">
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-primary" onclick="calculate()">Calcular</button>
+
+					<hr>
+
+					<div id="results">
+						<div class="row">
+							<div class="col">
+								<div class="alert alert-primary" role="alert">
+									<strong>Base IOF:</strong> <span id="baseIOF"></span> <br> <strong>IOF: </strong> <span id="rateIOF"></span> (<span id="taxIOF"></span>)
+								</div>
+							</div>
+							<div class="col">
+								<div class="alert alert-primary" role="alert">
+									<strong>Base IR:</strong> <span id="baseIR"></span> <br> <strong>IR: </strong> <span id="taxIR"></span> (<span id="rateIR"></span>)
+								</div>
+							</div>
+							<div class="col">
+								<div class="alert alert-success" role="alert">
+									<strong>Líquido:</strong> <span id="amountNet"></span> <br> <strong>Dias:</strong> <span id="days"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				function calculate() {
+					var inputAmount = document.getElementById("inputAmount").value;
+					var inputDays = document.getElementById("inputDays").value;
+					var inputStartDate = document.getElementById("inputStartDate").value;
+					var inputEndDate = document.getElementById("inputEndDate").value;
+
+					if (!inputAmount) {
+						alert("Please enter a valid amount.");
+						return;
+					}
+
+					if (!inputDays && (!inputStartDate || !inputEndDate)) {
+						alert("Please enter either the number of days or the start and end dates.");
+						return;
+					}
+
+					if (!inputDays && (inputStartDate >= inputEndDate)) {
+						alert("Por favor, insira um data inicial inferior a data final.");
+						return;
+					}
+
+					var ratesIOF = [0, 0.96, 0.93, 0.9, 0.86, 0.83, 0.8, 0.76, 0.73, 0.7, 0.66, 0.63, 0.6, 0.56, 0.53, 0.5, 0.46, 0.43, 0.4, 0.36, 0.33, 0.3, 0.26, 0.23, 0.2, 0.16, 0.13, 0.1, 0.06, 0.03, 0];
+
+					var amount = inputToValue("inputAmount");
+					var days = inputDays ? parseInt(inputDays) : Math.round((new Date(inputEndDate) - new Date(inputStartDate)) / (1000 * 60 * 60 * 24));
+					var rateIOF = ratesIOF[days <= 30 ? days : 29];
+					// var taxIOF = amount * rateIOF * 0.38 / 100;
+					var baseIOF = amount;
+					var taxIOF = (amount * rateIOF);
+					var baseIR = amount - taxIOF;
+					var rateIR = days <= 0 ? 0 : days < 181 ? 0.225 : days < 361 ? 0.2 : days < 721 ? 0.175 : 0.15;
+					var taxIR = baseIR * rateIR;
+					var amountNet = baseIR - taxIR;
+
+					console.log(rateIOF, taxIOF)
+					console.log(rateIR, taxIR)
+
+					document.getElementById("baseIOF").innerHTML = formatarDinheiro(baseIOF)
+					document.getElementById("rateIOF").innerHTML = (rateIOF * 100).toFixed(2) + "%";
+					document.getElementById("taxIOF").innerHTML = formatarDinheiro(taxIOF);
+					document.getElementById("baseIR").innerHTML = formatarDinheiro(baseIR)
+					document.getElementById("rateIR").innerHTML = (rateIR * 100).toFixed(2) + "%";
+					document.getElementById("taxIR").innerHTML = formatarDinheiro(taxIR);
+					document.getElementById("amountNet").innerHTML = formatarDinheiro(amountNet);
+					document.getElementById("days").innerHTML = days;
+				}
+			</script>
+
+			<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+		</div>
+	</div>
+</body>
+
+</html>

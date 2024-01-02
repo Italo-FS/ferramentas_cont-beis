@@ -1,0 +1,217 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 9pt;
+  background-color: #f9f9f9;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  /* height: 32px; */
+  display: flex;
+  flex-direction: column;
+  background: silver;
+  font-family: Segoe UI;
+  font-size: 10pt;
+  position: absolute;
+  z-index: 99;
+}
+
+h5 {
+  margin-top: 6px;
+}
+
+h6 {
+  margin-top: 6px;
+}
+
+.title-bar {
+  padding: 0.35em 0.5em;
+  flex-grow: 1;
+}
+
+.title-btn {
+  padding: 0.35em 1.0em;
+  cursor: pointer;
+  vertical-align: bottom;
+  font-family: Webdings;
+  font-size: 11pt;
+}
+
+.title-btn-nav {
+  padding: 0.35em 1.0em;
+  cursor: pointer;
+  vertical-align: bottom;
+  font-size: 11pt;
+}
+
+.title-sidebtn:hover {
+  background: rgba(0, 0, 0, .2);
+}
+
+.title-btn:hover {
+  background: rgba(0, 0, 0, .2);
+}
+
+.title-btn-close:hover {
+  background: #dc3545;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.row {
+  margin: 0px;
+  margin-top: 5px;
+  display: flex;
+  text-align: bottom;
+}
+
+body .title-btn-restore {
+  display: none
+}
+
+body.neutron-maximized .title-btn-restore {
+  display: block
+}
+
+body.neutron-maximized .title-btn-maximize {
+  display: none
+}
+
+label {
+  font-size: 0.8rem;
+  margin-bottom: 0px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 0.5em;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.bellow_header {
+  height: 100%;
+}
+
+.view-div {
+  height: 100%;
+}
+
+.card-mainmenu {
+  padding: 0;
+  margin: 1px;
+  width: 110px;
+  height: 140px;
+}
+
+.card-disabled {
+  background-color: rgb(229, 229, 229);
+  color: rgb(196, 196, 196);
+}
+
+.card-mainmenu>.card {
+  width: 110px;
+  height: 140px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.card-mainmenu .card .card-body .card-title {
+  font-size: 0.9rem;
+}
+
+.card-mainmenu>.card>.card-img-top {
+  height: 45%;
+}
+
+.card-mainmenu i {
+  font-size: 1.6rem;
+  /* cornflowerblue; */
+}
+
+.card-mainmenu img {
+  font-size: 1.6rem;
+  /* cornflowerblue; */
+}
+
+.card-mainmenu>.card:hover {
+  background-color: rgb(201, 217, 228);
+}
+
+.config-card>.card-header {
+  background-color: white;
+}
+
+/* #breadcrumb {
+  padding-top: 35px;
+  font-size: 0.9rem;
+  color: rgb(50, 50, 50);
+  margin-bottom: 0px
+} */
+
+.h5 {
+  font-size: calc(100% + 1vw + 1vh);
+}
+
+.vr-left {
+  border-left: 1px solid #e0e0e0;
+}
+
+.vr-right {
+  border-right: 1px solid #e0e0e0;
+}
+
+#mainheader {
+  height: 32px;
+}
+
+.bg-dark2 {
+  background-color: #4A535B;
+}
+
+.tooltip-inner {
+  text-align: left;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}

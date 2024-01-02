@@ -1,0 +1,804 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!--
+		The IE Compatibility flag, while not always necessary, makes sure your page
+		will always load in IE11+ rendering mode instead of being limited to IE7
+		features and behaviors. While IE11 is still relatively old as a rendering
+		engine, it supports the most fundamental parts needed for modern webpages to
+		function correctly.
+
+		Neutron will do its best to enable IE11+ rendering mode regardless of this
+		tag, but in current releases pages will not render correctly when compiled
+		unless this tag is present. Because of that and other edge cases, any page
+		you write to load in Neutron should contain this meta tag.
+	-->
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+	<script src="libs/jquery/jquery.min.js"></script>
+
+	<script src="libs/bootstrap/popper.min.js"></script>
+
+	<link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="libs/bootstrap/bootstrap.min.js"></script>
+	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<link href="libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="styles/styles.css" rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	<script src="js/routes.js"></script>
+
+	<!-- ------------------------------------------------------------------ -->
+</head>
+
+<body class="d-flex flex-column" onload="body_loaded();">
+	<!-- Title Bar -->
+	<header id="main_header"></header>
+	<!-- End Title Bar -->
+
+	<div class="flex-grow-1 d-flex">
+		<!-- Sidebar -->
+		<div id="sidebar"></div>
+		<!-- End Sidebar -->
+
+		<div id="main_body" class="main flex-grow-1">
+			<p id="breadcrumb"></p>
+
+			<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+			<div class="container mt-3">
+				<div class="row align-items-end">
+					<div class="col-md-12 text-center">
+						<h3>Tabelas do Simples Nacional</h3>
+					</div>
+				</div>
+
+				<div class="row align-items-end">
+					<table class='table table-sm'>
+						<thead onclick="showHideContentByClass('hide_anexo_I')">
+							<tr class="thead-dark" style="text-align: center">
+								<th colspan='100%' class="pointer">Anexo I</th>
+							</tr>
+						</thead>
+						<tbody class='hide_anexo_I'>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Tabela Simples Nacional – Comércio – 2018
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>Faixa</th>
+												<th>Alíquota</th>
+												<th>Valor a Deduzir (em R$)</th>
+												<th>Receita Bruta em 12 Meses (em R$)</th>
+											</tr>
+											<tr>
+												<td>1ª Faixa</td>
+												<td>4,00%</td>
+												<td>–</td>
+												<td>Até 180.000,00</td>
+											</tr>
+											<tr>
+												<td>2ª Faixa</td>
+												<td>7,30%</td>
+												<td>5.940,00</td>
+												<td>De 180.000,01 a 360.000,00</td>
+											</tr>
+											<tr>
+												<td>3ª Faixa</td>
+												<td>9,50%</td>
+												<td>13.860,00</td>
+												<td>De 360.000,01 a 720.000,00</td>
+											</tr>
+											<tr>
+												<td>4ª Faixa</td>
+												<td>10,70%</td>
+												<td>22.500,00</td>
+												<td>De 720.000,01 a 1.800.000,00</td>
+											</tr>
+											<tr>
+												<td>5ª Faixa</td>
+												<td>14,30%</td>
+												<td>87.300,00</td>
+												<td>De 1.800.000,01 a 3.600.000,00</td>
+											</tr>
+											<tr>
+												<td>6ª Faixa</td>
+												<td>19,00%</td>
+												<td>378.000,00</td>
+												<td>De 3.600.000,01 a 4.800.000,00</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Percentual de Repartição dos Tributos
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>CPP</th>
+												<th>CSLL</th>
+												<th>ICMS</th>
+												<th>IRPJ</th>
+												<th>Cofins</th>
+												<th>Faixas</th>
+												<th>PIS/Pasep</th>
+											</tr>
+											<tr>
+												<td>41,50%</td>
+												<td>3,50%</td>
+												<td>34,00%</td>
+												<td>5,50%</td>
+												<td>12,74%</td>
+												<td>1a Faixa</td>
+												<td>2,76%</td>
+											</tr>
+											<tr>
+												<td>41,50%</td>
+												<td>3,50%</td>
+												<td>34,00%</td>
+												<td>5,50%</td>
+												<td>12,74%</td>
+												<td>2a Faixa</td>
+												<td>2,76%</td>
+											</tr>
+											<tr>
+												<td>42,00%</td>
+												<td>3,50%</td>
+												<td>33,50%</td>
+												<td>5,50%</td>
+												<td>12,74%</td>
+												<td>3a Faixa</td>
+												<td>2,76%</td>
+											</tr>
+											<tr>
+												<td>42,00%</td>
+												<td>3,50%</td>
+												<td>33,50%</td>
+												<td>5,50%</td>
+												<td>12,74%</td>
+												<td>4a Faixa</td>
+												<td>2,76%</td>
+											</tr>
+											<tr>
+												<td>42,00%</td>
+												<td>3,50%</td>
+												<td>33,50%</td>
+												<td>5,50%</td>
+												<td>12,74%</td>
+												<td>5a Faixa</td>
+												<td>2,76%</td>
+											</tr>
+											<tr>
+												<td>42,10%</td>
+												<td>10,00%</td>
+												<td>–</td>
+												<td>13,50%</td>
+												<td>28,27%</td>
+												<td>6a Faixa</td>
+												<td>6,13%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+
+				<div class="row align-items-end">
+					<table class='table table-sm'>
+						<thead onclick="showHideContentByClass('hide_anexo_II')">
+							<tr class="thead-dark" style="text-align: center">
+								<th colspan='100%' class="pointer">Anexo II</th>
+							</tr>
+						</thead>
+						<tbody class='hide_anexo_II' toggle>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Tabela Simples Nacional 2018 – Indústria
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>Faixa</th>
+												<th>Alíquota</th>
+												<th>Valor a Deduzir (em R$)</th>
+												<th>Receita Bruta em 12 Meses (em R$)</th>
+											</tr>
+											<tr>
+												<td>1a Faixa</td>
+												<td>4,50%</td>
+												<td>–</td>
+												<td>Até 180.000,00</td>
+											</tr>
+											<tr>
+												<td>2a Faixa</td>
+												<td>7,80%</td>
+												<td>5.940,00</td>
+												<td>De 180.000,01 a 360.000,00</td>
+											</tr>
+											<tr>
+												<td>3a Faixa</td>
+												<td>10,00%</td>
+												<td>13.860,00</td>
+												<td>De 360.000,01 a 720.000,00</td>
+											</tr>
+											<tr>
+												<td>4a Faixa</td>
+												<td>11,20%</td>
+												<td>22.500,00</td>
+												<td>De 720.000,01 a 1.800.000,00</td>
+											</tr>
+											<tr>
+												<td>5a Faixa</td>
+												<td>14,70%</td>
+												<td>85.500,00</td>
+												<td>De 1.800.000,01 a 3.600.000,00</td>
+											</tr>
+											<tr>
+												<td>6a Faixa</td>
+												<td>30,00%</td>
+												<td>720.000,00</td>
+												<td>De 3.600.000,01 a 4.800.000,00</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Percentual de Repartição dos Tributos
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>CPP</th>
+												<th>IPI</th>
+												<th>CSLL</th>
+												<th>ICMS</th>
+												<th>IRPJ</th>
+												<th>Cofins</th>
+												<th>Faixas</th>
+												<th>PIS/Pasep</th>
+											</tr>
+											<tr>
+												<td>37,50%</td>
+												<td>7,50%</td>
+												<td>3,50%</td>
+												<td>32,00%</td>
+												<td>5,50%</td>
+												<td>11,51%</td>
+												<td>1a Faixa</td>
+												<td>2,49%</td>
+											</tr>
+											<tr>
+												<td>37,50%</td>
+												<td>7,50%</td>
+												<td>3,50%</td>
+												<td>32,00%</td>
+												<td>5,50%</td>
+												<td>11,51%</td>
+												<td>2a Faixa</td>
+												<td>2,49%</td>
+											</tr>
+											<tr>
+												<td>37,50%</td>
+												<td>7,50%</td>
+												<td>3,50%</td>
+												<td>32,00%</td>
+												<td>5,50%</td>
+												<td>11,51%</td>
+												<td>3a Faixa</td>
+												<td>2,49%</td>
+											</tr>
+											<tr>
+												<td>37,50%</td>
+												<td>7,50%</td>
+												<td>3,50%</td>
+												<td>32,00%</td>
+												<td>5,50%</td>
+												<td>11,51%</td>
+												<td>4a Faixa</td>
+												<td>2,49%</td>
+											</tr>
+											<tr>
+												<td>37,50%</td>
+												<td>7,50%</td>
+												<td>3,50%</td>
+												<td>32,00%</td>
+												<td>5,50%</td>
+												<td>11,51%</td>
+												<td>5a Faixa</td>
+												<td>2,49%</td>
+											</tr>
+											<tr>
+												<td>23,50%</td>
+												<td>35,00%</td>
+												<td>7,50%</td>
+												<td>–</td>
+												<td>8,50%</td>
+												<td>20,96%</td>
+												<td>6a Faixa</td>
+												<td>4,54%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+
+				<div class="row align-items-end">
+					<table class='table table-sm'>
+						<thead onclick="showHideContentByClass('hide_anexo_III')">
+							<tr class="thead-dark" style="text-align: center">
+								<th colspan='100%' class="pointer">Anexo III</th>
+							</tr>
+						</thead>
+						<tbody class='hide_anexo_III'>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Tabela Simples Nacional 2018 – Serviços
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>Faixa</th>
+												<th>Alíquota</th>
+												<th>Valor a Deduzir (em R$)</th>
+												<th>Receita Bruta em 12 Meses (em R$)</th>
+											</tr>
+											<tr>
+												<td>1a Faixa</td>
+												<td>6,00%</td>
+												<td>–</td>
+												<td>Até 180.000,00</td>
+											</tr>
+											<tr>
+												<td>2a Faixa</td>
+												<td>11,20%</td>
+												<td>9.360,00</td>
+												<td>De 180.000,01 a 360.000,00</td>
+											</tr>
+											<tr>
+												<td>3a Faixa</td>
+												<td>13,50%</td>
+												<td>17.640,00</td>
+												<td>De 360.000,01 a 720.000,00</td>
+											</tr>
+											<tr>
+												<td>4a Faixa</td>
+												<td>16,00%</td>
+												<td>35.640,00</td>
+												<td>De 720.000,01 a 1.800.000,00</td>
+											</tr>
+											<tr>
+												<td>5a Faixa</td>
+												<td>21,00%</td>
+												<td>125.640,00</td>
+												<td>De 1.800.000,01 a 3.600.000,00</td>
+											</tr>
+											<tr>
+												<td>6a Faixa</td>
+												<td>33,00%</td>
+												<td>648.000,00</td>
+												<td>De 3.600.000,01 a 4.800.000,00</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Percentual de Repartição dos Tributos
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>CPP</th>
+												<th>ISS</th>
+												<th>CSLL</th>
+												<th>IRPJ</th>
+												<th>Cofins</th>
+												<th>Faixas</th>
+												<th>PIS/Pasep</th>
+											</tr>
+											<tr>
+												<td>43,40%</td>
+												<td>33,50%</td>
+												<td>3,50%</td>
+												<td>4,00%</td>
+												<td>12,82%</td>
+												<td>1a Faixa</td>
+												<td>2,78%</td>
+											</tr>
+											<tr>
+												<td>43,40%</td>
+												<td>32,00%</td>
+												<td>3,50%</td>
+												<td>4,00%</td>
+												<td>14,05%</td>
+												<td>2a Faixa</td>
+												<td>3,05%</td>
+											</tr>
+											<tr>
+												<td>43,40%</td>
+												<td>32,50%</td>
+												<td>3,50%</td>
+												<td>4,00%</td>
+												<td>13,64%</td>
+												<td>3a Faixa</td>
+												<td>2,96%</td>
+											</tr>
+											<tr>
+												<td>43,40%</td>
+												<td>32,50%</td>
+												<td>3,50%</td>
+												<td>4,00%</td>
+												<td>13,64%</td>
+												<td>4a Faixa</td>
+												<td>2,96%</td>
+											</tr>
+											<tr>
+												<td>43,40%</td>
+												<td>33,50% (*)</td>
+												<td>3,50%</td>
+												<td>4,00%</td>
+												<td>12,82%</td>
+												<td>5a Faixa</td>
+												<td>2,78%</td>
+											</tr>
+											<tr>
+												<td>30,50%</td>
+												<td>&nbsp;</td>
+												<td>15,00%</td>
+												<td>35,00%</td>
+												<td>16,03%</td>
+												<td>6a Faixa</td>
+												<td>3,47%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+
+				<div class="row align-items-end">
+					<table class='table table-sm'>
+						<thead onclick="showHideContentByClass('hide_anexo_IV')">
+							<tr class="thead-dark" style="text-align: center">
+								<th colspan='100%' class="pointer">Anexo IV</th>
+							</tr>
+						</thead>
+						<tbody class='hide_anexo_IV'>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Tabela Simples Nacional 2018 – Serviços
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>Faixa</th>
+												<th>Alíquota</th>
+												<th>Valor a Deduzir (em R$)</th>
+												<th>Receita Bruta em 12 Meses (em R$)</th>
+											</tr>
+											<tr>
+												<td>1a Faixa</td>
+												<td>4,50%</td>
+												<td>–</td>
+												<td>Até 180.000,00</td>
+											</tr>
+											<tr>
+												<td>2a Faixa</td>
+												<td>9,00%</td>
+												<td>8.100,00</td>
+												<td>De 180.000,01 a 360.000,00</td>
+											</tr>
+											<tr>
+												<td>3a Faixa</td>
+												<td>10,20%</td>
+												<td>12.420,00</td>
+												<td>De 360.000,01 a 720.000,00</td>
+											</tr>
+											<tr>
+												<td>4a Faixa</td>
+												<td>14,00%</td>
+												<td>39.780,00</td>
+												<td>De 720.000,01 a 1.800.000,00</td>
+											</tr>
+											<tr>
+												<td>5a Faixa</td>
+												<td>22,00%</td>
+												<td>183.780,00</td>
+												<td>De 1.800.000,01 a 3.600.000,00</td>
+											</tr>
+											<tr>
+												<td>6a Faixa</td>
+												<td>33,00%</td>
+												<td>828.000,00</td>
+												<td>De 3.600.000,01 a 4.800.000,00</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Percentual de Repartição dos Tributos
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>ISS</th>
+												<th>CSLL</th>
+												<th>IRPJ</th>
+												<th>Cofins</th>
+												<th>Faixas</th>
+												<th>PIS/Pasep</th>
+											</tr>
+											<tr>
+												<td>44,50%</td>
+												<td>15,20%</td>
+												<td>18,80%</td>
+												<td>17,67%</td>
+												<td>1a Faixa</td>
+												<td>3,83%</td>
+											</tr>
+											<tr>
+												<td>40,00%</td>
+												<td>15,20%</td>
+												<td>19,80%</td>
+												<td>20,55%</td>
+												<td>2a Faixa</td>
+												<td>4,45%</td>
+											</tr>
+											<tr>
+												<td>40,00%</td>
+												<td>15,20%</td>
+												<td>20,80%</td>
+												<td>19,73%</td>
+												<td>3a Faixa</td>
+												<td>4,27%</td>
+											</tr>
+											<tr>
+												<td>40,00%</td>
+												<td>19,20%</td>
+												<td>17,80%</td>
+												<td>18,90%</td>
+												<td>4a Faixa</td>
+												<td>4,10%</td>
+											</tr>
+											<tr>
+												<td>40,00% (*)</td>
+												<td>19,20%</td>
+												<td>18,80%</td>
+												<td>18,08%</td>
+												<td>5a Faixa</td>
+												<td>3,92%</td>
+											</tr>
+											<tr>
+												<td>–</td>
+												<td>21,50%</td>
+												<td>53,50%</td>
+												<td>20,55%</td>
+												<td>6a Faixa</td>
+												<td>4,45%</td>
+											</tr>
+											<tr>
+												<td>ISS</td>
+												<td>CSLL</td>
+												<td>IRPJ</td>
+												<td>Cofins</td>
+												<td>Faixa</td>
+												<td>PIS/Pasep</td>
+											</tr>
+											<tr>
+												<td>Percentual de ISS fixo em 5%</td>
+												<td>(Alíquota efetiva 5%) x 32,00%</td>
+												<td>Alíquota efetiva 5%) x 31,33%</td>
+												<td>(Alíquota efetiva 5%) x 30,13%</td>
+												<td>5a Faixa, com alíquota efetiva superior a 12,5%</td>
+												<td>Alíquota efetiva 5%) x 6,54%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+
+				<div class="row align-items-end">
+					<table class='table table-sm'>
+						<thead onclick="showHideContentByClass('hide_anexo_V')">
+							<tr class="thead-dark" style="text-align: center">
+								<th colspan='100%' class="pointer">Anexo V</th>
+							</tr>
+						</thead>
+						<tbody class='hide_anexo_V'>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Tabela Simples Nacional 2018 – Serviços
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>Faixa</th>
+												<th>Alíquota</th>
+												<th>Valor a Deduzir (em R$)</th>
+												<th>Receita Bruta em 12 Meses (em R$)</th>
+											</tr>
+											<tr>
+												<td>1a Faixa</td>
+												<td>15,50%</td>
+												<td>–</td>
+												<td>Até 180.000,00</td>
+											</tr>
+											<tr>
+												<td>2a Faixa</td>
+												<td>18,00%</td>
+												<td>4.500,00</td>
+												<td>De 180.000,01 a 360.000,00</td>
+											</tr>
+											<tr>
+												<td>3a Faixa</td>
+												<td>19,50%</td>
+												<td>9.900,00</td>
+												<td>De 360.000,01 a 720.000,00</td>
+											</tr>
+											<tr>
+												<td>4a Faixa</td>
+												<td>20,50%</td>
+												<td>17.100,00</td>
+												<td>De 720.000,01 a 1.800.000,00</td>
+											</tr>
+											<tr>
+												<td>5a Faixa</td>
+												<td>23,00%</td>
+												<td>62.100,00</td>
+												<td>De 1.800.000,01 a 3.600.000,00</td>
+											</tr>
+											<tr>
+												<td>6a Faixa</td>
+												<td>30,50%</td>
+												<td>540.000,00</td>
+												<td>De 3.600.000,01 a 4.800.000,00</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th colspan="100%" class="thead-dark" style="text-align: center">
+									Percentual de Repartição dos Tributos
+								</th>
+							</tr>
+							<tr>
+								<td colspan="100%">
+									<table class='table table-sm'>
+										<tbody>
+											<tr>
+												<th>CPP</th>
+												<th>ISS</th>
+												<th>CSLL</th>
+												<th>IRPJ</th>
+												<th>Cofins</th>
+												<th>Faixas</th>
+												<th>PIS/Pasep</th>
+											</tr>
+											<tr>
+												<td>28,85%</td>
+												<td>14,00%</td>
+												<td>15,00%</td>
+												<td>25,00%</td>
+												<td>14,10%</td>
+												<td>1a Faixa</td>
+												<td>3,05%</td>
+											</tr>
+											<tr>
+												<td>27,85%</td>
+												<td>17,00%</td>
+												<td>15,00%</td>
+												<td>23,00%</td>
+												<td>14,10%</td>
+												<td>2a Faixa</td>
+												<td>3,05%</td>
+											</tr>
+											<tr>
+												<td>23,85%</td>
+												<td>19,00%</td>
+												<td>15,00%</td>
+												<td>24,00%</td>
+												<td>14,92%</td>
+												<td>3a Faixa</td>
+												<td>3,23%</td>
+											</tr>
+											<tr>
+												<td>23,85%</td>
+												<td>21,00%</td>
+												<td>15,00%</td>
+												<td>21,00%</td>
+												<td>15,74%</td>
+												<td>4a Faixa</td>
+												<td>3,41%</td>
+											</tr>
+											<tr>
+												<td>23,85%</td>
+												<td>23,50%</td>
+												<td>12,50%</td>
+												<td>23,00%</td>
+												<td>14,10%</td>
+												<td>5a Faixa</td>
+												<td>3,05%</td>
+											</tr>
+											<tr>
+												<td>29,50%</td>
+												<td>–</td>
+												<td>15,50%</td>
+												<td>35,00%</td>
+												<td>16,44%</td>
+												<td>6a Faixa</td>
+												<td>3,56%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+
+				<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+			</div>
+		</div>
+
+		<script>
+			showHideContentByClass('hide_anexo_I')
+			showHideContentByClass('hide_anexo_II')
+			showHideContentByClass('hide_anexo_III')
+			showHideContentByClass('hide_anexo_IV')
+			showHideContentByClass('hide_anexo_V')
+		</script>
+
+</body>
+
+</html>

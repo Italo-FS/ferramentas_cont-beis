@@ -1,0 +1,8 @@
+.main {
+	font-size: 0.7rem;
+}
+
+.custom-control {
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+}

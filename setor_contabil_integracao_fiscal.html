@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!--
+		The IE Compatibility flag, while not always necessary, makes sure your page
+		will always load in IE11+ rendering mode instead of being limited to IE7
+		features and behaviors. While IE11 is still relatively old as a rendering
+		engine, it supports the most fundamental parts needed for modern webpages to
+		function correctly.
+
+		Neutron will do its best to enable IE11+ rendering mode regardless of this
+		tag, but in current releases pages will not render correctly when compiled
+		unless this tag is present. Because of that and other edge cases, any page
+		you write to load in Neutron should contain this meta tag.
+	-->
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+	<script src="libs/jquery/jquery.min.js"></script>
+
+	<script src="libs/bootstrap/popper.min.js"></script>
+
+	<link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="libs/bootstrap/bootstrap.min.js"></script>
+	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<link href="libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="styles/styles.css" rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	<script src="js/routes.js"></script>
+
+	<!-- ------------------------------------------------------------------ -->
+
+	<script>
+		function inputToValue(inputID) {
+			let inputString = document.getElementById(inputID).value.replace('.', '').replace(',', '.')
+			return isNaN(parseFloat(inputString)) ? 0.00 : parseFloat(inputString)
+		}
+
+		function EvalInputValue(inputID) {
+			let inputString = document.getElementById(inputID).value //.replace('.', '').replace(',', '.')
+			try {
+				result = eval(inputString)
+			} catch (e) {
+				result = 0
+			}
+			return isNaN(parseFloat(result)) ? 0.00 : parseFloat(result)
+
+		}
+
+		function Calcular() {
+			Entrada_CFOP = EvalInputValue("Entrada_CFOP");
+			Entrada_TotalDeServicos = EvalInputValue("Entrada_TotalDeServicos");
+			Entrada_ISSRetido = EvalInputValue("Entrada_ISSRetido");
+			Entrada_CofinsRetido = EvalInputValue("Entrada_CofinsRetido");
+			Entrada_PISRetido = EvalInputValue("Entrada_PISRetido");
+			Entrada_CSLLRetido = EvalInputValue("Entrada_CSLLRetido");
+			Entrada_CSRFRetido = EvalInputValue("Entrada_CSRFRetido");
+			Entrada_IRRFRetido = EvalInputValue("Entrada_IRRFRetido");
+			Entrada_INSSRetido = EvalInputValue("Entrada_INSSRetido");
+			Entrada_Deducoes = EvalInputValue("Entrada_Deducoes");
+			Saida_CFOP = EvalInputValue("Saida_CFOP");
+			Saida_TotalDeServicos = EvalInputValue("Saida_TotalDeServicos");
+			Saida_ISSRetido = EvalInputValue("Saida_ISSRetido");
+			Saida_CofinsRetido = EvalInputValue("Saida_CofinsRetido");
+			Saida_PISRetido = EvalInputValue("Saida_PISRetido");
+			Saida_CSLLRetido = EvalInputValue("Saida_CSLLRetido");
+			Saida_CSRFRetido = EvalInputValue("Saida_CSRFRetido");
+			Saida_IRRFRetido = EvalInputValue("Saida_IRRFRetido");
+			Saida_INSSRetido = EvalInputValue("Saida_INSSRetido");
+			Saida_Deducoes = EvalInputValue("Saida_Deducoes");
+
+			document.getElementById("Entrada_TotalDeEntradas").value = Entrada_CFOP + Entrada_TotalDeServicos + Entrada_ISSRetido + Entrada_CofinsRetido + Entrada_PISRetido + Entrada_CSLLRetido + Entrada_CSRFRetido + Entrada_IRRFRetido + Entrada_INSSRetido - Entrada_Deducoes
+			document.getElementById("Saida_TotalDeSaidas").value = Saida_CFOP + Saida_TotalDeServicos + Saida_ISSRetido + Saida_CofinsRetido + Saida_PISRetido + Saida_CSLLRetido + Saida_CSRFRetido + Saida_IRRFRetido + Saida_INSSRetido - Saida_Deducoes
+		}	
+	</script>
+
+</head>
+
+<body class="d-flex flex-column" onload="body_loaded();">
+	<!-- Title Bar -->
+	<header id="main_header"></header>
+	<!-- End Title Bar -->
+
+	<div class="flex-grow-1 d-flex">
+		<!-- Sidebar -->
+		<div id="sidebar"></div>
+		<!-- End Sidebar -->
+
+		<div id="main_body" class="main flex-grow-1">
+			<p id="breadcrumb"></p>
+
+			<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+			<div class="container mt-3">
+				<div class="row align-items-end">
+					<div class="col-md-12 text-center">
+						<h3>Integração Fiscal</h3>
+					</div>
+				</div>
+				<div class="row grid-divider">
+					<div class="col-sm-6 text-center">
+						<form>
+							<h6>Entradas</h6>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Entrada_CFOP">CFOP</label>
+								<input class="form-control" id="Entrada_CFOP" onkeyup="Calcular()">
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Entrada_TotalDeServicos">Total de Serviços</label>
+								<input class="form-control" id="Entrada_TotalDeServicos" onkeyup="Calcular()">
+							</div>
+							<div class="row">
+								<div class="col-sm-6 text-center" style="padding-left: 0px;padding-right: 5px;">
+									<div class="row align-items-end">
+										<label for="Entrada_ISSRetido">ISS Retido</label>
+										<input class="form-control" id="Entrada_ISSRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Entrada_CofinsRetido">Cofins Retido</label>
+										<input class="form-control" id="Entrada_CofinsRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Entrada_PISRetido">PIS Retido</label>
+										<input class="form-control" id="Entrada_PISRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Entrada_CSLLRetido">CSLL Retido</label>
+										<input class="form-control" id="Entrada_CSLLRetido" onkeyup="Calcular()">
+									</div>
+								</div>
+								<div class="col-sm-6 text-center" style="padding-left: 5px;padding-right: 0px;">
+									<div class="row align-items-end">
+										<label for="Entrada_CSRFRetido">CSRF Retido</label>
+										<input class="form-control" id="Entrada_CSRFRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Entrada_IRRFRetido">IRRF Retido</label>
+										<input class="form-control" id="Entrada_IRRFRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Entrada_INSSRetido">INSS Retido</label>
+										<input class="form-control" id="Entrada_INSSRetido" onkeyup="Calcular()">
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Entrada_Deducoes">(-) Deduções</label>
+								<input class="form-control" id="Entrada_Deducoes" onkeyup="Calcular()">
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Entrada_TotalDeEntradas">(=) Total de Entradas</label>
+								<input class="form-control" id="Entrada_TotalDeEntradas" onkeyup="Calcular()" readonly>
+							</div>
+						</form>
+					</div>
+					<!-- <div style="border-left:1px solid #000;height:500px"></div> -->
+					<div class="col-sm-6 text-center vr-left">
+						<form>
+							<h6>Saídas</h6>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Saida_CFOP">CFOP</label>
+								<input class="form-control" id="Saida_CFOP" onkeyup="Calcular()">
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Saida_TotalDeServicos">Total de Serviços</label>
+								<input class="form-control" id="Saida_TotalDeServicos" onkeyup="Calcular()">
+							</div>
+							<div class="row">
+								<div class="col-sm-6 text-center" style="padding-left: 0px;padding-right: 5px;">
+									<div class="row align-items-end">
+										<label for="Saida_ISSRetido">ISS Retido</label>
+										<input class="form-control" id="Saida_ISSRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Saida_CofinsRetido">Cofins Retido</label>
+										<input class="form-control" id="Saida_CofinsRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Saida_PISRetido">PIS Retido</label>
+										<input class="form-control" id="Saida_PISRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Saida_CSLLRetido">CSLL Retido</label>
+										<input class="form-control" id="Saida_CSLLRetido" onkeyup="Calcular()">
+									</div>
+								</div>
+								<div class="col-sm-6 text-center" style="padding-left: 5px;padding-right: 0px;">
+									<div class="row align-items-end">
+										<label for="Saida_CSRFRetido">CSRF Retido</label>
+										<input class="form-control" id="Saida_CSRFRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Saida_IRRFRetido">IRRF Retido</label>
+										<input class="form-control" id="Saida_IRRFRetido" onkeyup="Calcular()">
+									</div>
+									<div class="row align-items-end">
+										<label for="Saida_INSSRetido">INSS Retido</label>
+										<input class="form-control" id="Saida_INSSRetido" onkeyup="Calcular()">
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Saida_Deducoes">(-) Deduções</label>
+								<input class="form-control" id="Saida_Deducoes" onkeyup="Calcular()">
+							</div>
+							<hr>
+							<div class="row align-items-end">
+								<label for="Saida_TotalDeSaidas">(=) Total de Saídas</label>
+								<input class="form-control" id="Saida_TotalDeSaidas" onkeyup="Calcular()" readonly>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!------------------------------------------------------------- Window Contents ------------------------------------------------------------->
+
+		</div>
+	</div>
+</body>
+
+</html>
