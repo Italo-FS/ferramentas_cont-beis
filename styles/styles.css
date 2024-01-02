@@ -163,9 +163,7 @@ label {
 	background-color: rgb(201, 217, 228);
 }
 
-@media screen and (max-width: 600px) {
-
-	/* Para telas com largura máxima de 600 pixels */
+/* @media only screen and (max-width: 600px) {
 	.card-mainmenu {
 		width: 220px;
 		height: 280px;
@@ -177,18 +175,16 @@ label {
 
 	.card-mainmenu i {
 		font-size: 3rem;
-		/* cornflowerblue; */
 	}
 
 	.card-mainmenu img {
 		font-size: 3rem;
-		/* cornflowerblue; */
 	}
 
 	.breadcrumb {
 		font-size: 2rem;
 	}
-}
+} */
 
 .config-card>.card-header {
 	background-color: white;
