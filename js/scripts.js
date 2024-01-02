@@ -87,8 +87,11 @@ function drawCards() {
 			const card_body = document.createElement('div')
 			card_body.classList.add('card-body')
 
+			const card_header = document.createElement('div')
+			card_header.classList.add('menucard-header')
+
 			const card_icon = document.createElement('h5')
-			card_icon.classList.add('card-img-top')
+			card_icon.classList.add('card-header-content')
 			card_icon.innerHTML = element.heirs[i].cardIcon
 
 			const card_title = document.createElement('p')
@@ -99,11 +102,12 @@ function drawCards() {
 			link.classList.add('stretched-link')
 			link.href = element.heirs[i].fileName
 
-			if ((element.heirs[i].fileName) === '#' || (element.heirs[i].fileName) === '') {
+			if ((element.heirs[i].fileName) === '#') {
 				card_inner_area.classList.add('card-disabled')
 			}
 
-			card_body.appendChild(card_icon)
+			card_body.appendChild(card_header)
+			card_header.appendChild(card_icon)
 			card_body.appendChild(document.createElement('hr'))
 			card_body.appendChild(card_title)
 			card_body.appendChild(link)
